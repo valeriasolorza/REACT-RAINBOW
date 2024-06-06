@@ -20,22 +20,15 @@ function App() {
   })
 
 const addColor = (newColor) => {
-  setColors([ 'violet', 'blue',
-  'lightblue', 'green',
-  'greenyellow', 'yellow',
-  'orange', 'red', newColor])
+  setColors([ ...colors, newColor])
 }
 
-  return (
-    <div className="App">
-      {colors.map((color, i) =>
-        <ColorBlock key={i} color={color} />
-        
-      )}
-      <ColorForm addColor={addColor}/>
-    </div>
-
-  )
+return (
+  <div className="App">
+    {colorMap}
+    <ColorForm addColor={addColor}/>
+  </div>  
+)
 }
 
 
